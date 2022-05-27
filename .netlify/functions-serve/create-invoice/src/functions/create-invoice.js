@@ -9294,15 +9294,14 @@ exports.handler = async function(event, context) {
       })
     });
   } catch (error) {
-    console.log(String(error));
+    console.log(error);
   }
-  ;
   const { data } = await response.json();
   const offline_reference = data.offline_reference;
-  const imageUrl = await generateQR(offline_reference);
+  const imageURL = await generateQR(offline_reference);
   const body = {
     offline_reference,
-    qr: imageUrl
+    qr: imageURL
   };
   return {
     statusCode: 200,
@@ -9316,7 +9315,7 @@ exports.handler = async function(event, context) {
 var generateQR = async (offline_reference) => {
   try {
     return await import_qrcode.default.toDataURL(offline_reference);
-  } catch (err) {
+  } catch (error) {
     return "";
   }
 };

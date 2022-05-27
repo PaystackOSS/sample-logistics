@@ -4726,7 +4726,7 @@ function fixResponseChunkedTransferBadEnding(request, errorCallback) {
 var { BASE_URL, SECRET_KEY } = process.env;
 exports.handler = async function(event, context) {
   let { email } = JSON.parse(event.body);
-  const url = `${BASE_URL}/customer`;
+  let url = `${BASE_URL}/customer`;
   const headers = {
     Accept: "application/json",
     Authorization: `Bearer ${SECRET_KEY}`

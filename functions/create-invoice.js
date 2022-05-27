@@ -11,32 +11,33 @@ exports.handler = async function(event, context) {
   }
 
   let response = {}
+
   try {
-      response = await fetch(url, {
-      method: 'POST', 
+    response = await fetch(url, {
+      method: "POST",
       headers: headers,
       body: JSON.stringify({
         customer: customer,
         amount: amount
       })
     })
-  } catch(error) { 
-    console.log(String(error))
-  };
+  } catch(error) {
+    console.log(error)
+  }
 
   const { data } = await response.json()
   const offline_reference = data.offline_reference
-  const imageUrl = await generateQR(offline_reference)
+  const imageURL = await generateQR(offline_reference)
   const body = {
     offline_reference,
-    qr: imageUrl
+    qr: imageURL
   }
 
   return {
     statusCode: 200,
     headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Headers': 'Content-Type'
+      'Access-Control-Allow-Origin': '*', // Netlify serveless setting to allow CORS
+      'Access-Control-Allow-Headers': 'Content-Type' // Netlify serveless setting to allow CORS
     },
     body: JSON.stringify(body),
   }
@@ -45,7 +46,7 @@ exports.handler = async function(event, context) {
 const generateQR = async(offline_reference) => {
   try {
     return await QRCode.toDataURL(offline_reference)
-  } catch (err) {
+  } catch (error) {
     return ""
   }
 }

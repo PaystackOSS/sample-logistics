@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": ["../../../../../../Users/damilolaodujoko/Documents/projects/sample-logistics/functions/webhooks.js"],
+  "sourceRoot": "/var/folders/l1/q7ydz3dn3v94w78xz_x8b7k80000gn/T/tmp-7284-sK2GmQI6LoSR",
+  "sourcesContent": ["import fetch from \"node-fetch\"\nconst { BASE_URL, SECRET_KEY } = process.env\n\nexports.handler = async function(event, context) {\n\n  return {\n    statusCode: 200,\n    headers: {\n      'Access-Control-Allow-Origin': '*', // Netlify serveless setting to allow CORS\n      'Access-Control-Allow-Headers': 'Content-Type' // Netlify serveless setting to allow CORS\n    }\n  }\n}\n"],
+  "mappings": ";AACA,IAAM,EAAE,UAAU,eAAe,QAAQ;AAEzC,QAAQ,UAAU,eAAe,OAAO,SAAS;AAE/C,SAAO;AAAA,IACL,YAAY;AAAA,IACZ,SAAS;AAAA,MACP,+BAA+B;AAAA,MAC/B,gCAAgC;AAAA;AAAA;AAAA;",
+  "names": []
+}
