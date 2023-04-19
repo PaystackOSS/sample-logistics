@@ -1,29 +1,8 @@
-import fetch from "node-fetch"
-const { BASE_URL, SECRET_KEY } = process.env
+// TODO 1: Install and import all dependency (node-fetch) and env variable.
 
-exports.handler = async function(event, context) {
-  let {email} = JSON.parse(event.body)
-  let url = `${BASE_URL}/customer`
-  const headers = {
-    Accept: "application/json",
-    Authorization: `Bearer ${SECRET_KEY}`
-  }
+exports.handler = async function (event, context) {
+  // TODO 2: Initialise all varaibles
 
-  return fetch(url, {
-    method: "POST",
-    headers: headers,
-    body: JSON.stringify({
-      email: email
-    })
-  })
-    .then((response) => response.json())
-    .then((data) => ({
-      statusCode: 200,
-      headers: {
-        'Access-Control-Allow-Origin': '*', // Netlify serveless setting to allow CORS
-        'Access-Control-Allow-Headers': 'Content-Type' // Netlify serveless setting to allow CORS
-      },
-      body: JSON.stringify(data),
-    }))
-    .catch((error) => ({ statusCode: 422, body: String(error) }));
+  // TODO 3: Make network request and return response
+
 }

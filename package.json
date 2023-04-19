@@ -7,8 +7,6 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "node-fetch": "^3.2.10",
-    "qrcode": "^1.4.4",
     "vue": "^3.2.16",
     "vuex": "^4.0.2"
   },
