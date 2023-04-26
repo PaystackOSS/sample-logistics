@@ -3,3 +3,7 @@
 [functions]
   directory = "functions"
   node_bundler = "esbuild"
+[dev]
+  command = "yarn dev" # Command to start your dev server
+  targetPort = 3000 # The port for your application server, framework or site generator
+  port = 9999 # The port that the netlify dev will be accessible on
