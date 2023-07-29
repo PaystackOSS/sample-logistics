@@ -9,7 +9,7 @@ The customer reviews the payment details on the Terminal, slots in their card an
 
 2. **Netlify account**
 
-    Netlify functions was used for all API calls to Paystack. If you want to deploy your copy of this site, you should create s Netlify account.
+    Netlify functions was used for all API calls to Paystack. If you want to deploy your copy of this site, you should create a Netlify account.
     
     [<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify">](https://app.netlify.com/start/deploy?repository=https://github.com/PaystackOSS/sample-logistics)
     
